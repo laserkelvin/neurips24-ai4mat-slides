@@ -1,0 +1,168 @@
+/**
+ * Intel inspried color theme for reveal.js.
+ * The goal here is to perserve minimalist and harmonic colors
+ * while using color palettes that align with Intel branding
+ *
+ * https://coolors.co/0169b5-a2d6f9-fcf300-ffc600-f96e46
+ *
+ * By Kelvin Lee, 2022
+ */
+@import url(minimalist.css);
+@import url(https://fonts.googleapis.com/css2?family=Libre+Baskerville);
+
+:root {
+  --primary: #0169b5;
+  --secondary: #a2d6f9;
+  --tertiary: #fcf300;
+  --quarternary: #ffc600;
+  --pentanary: #f96e46;
+  --hColor: #fff;
+  --hrColor: var(--tertiary);
+  --bgColor: var(--primary);
+  --codeColor: var(--secondary);
+  --col-block: var(--primary);
+  --linkColor: var(--pentanary);
+  --hFontFamily: "Intel Clear";
+  --h1Size: 6vw;
+  --h2Size: 4vw;
+  --h3Size: 4vw;
+  --h4Size: 4rem;
+  --fontFamily: "Intel Clear";
+  --fontSize: 5.5rem;
+  --codeFontFamily: "Intel One Mono";
+}
+
+section.has-dark-background,
+section.has-dark-background h1,
+section.has-dark-background h2,
+section.has-dark-background h3,
+section.has-dark-background h4,
+section.has-dark-background h5,
+section.has-dark-background h6 {
+  color: #fff;
+}
+
+.reveal {
+  color: #fff;
+}
+
+.reveal h1 {
+  font-variant: small-caps;
+  text-transform: none;
+}
+
+.reveal h1,
+.reveal h2, .reveal h3,
+.reveal h4,
+.reveal h5 {
+  font-weight: 400;
+}
+
+.reveal p {
+  color: #fff;
+}
+
+.footer {
+  color: var(--secondary);
+}
+
+.footer small {
+  font-size: 0.5em;
+  margin-top: 0.5vw;
+}
+
+figure {
+  border-radius: var(--boxRadius);
+  background-color: var(--col-block);
+  color: var(--pentanary);
+  padding: 0.7vw;
+}
+
+.transparent {
+  background-color: transparent;
+  color: var(--secondary);
+}
+
+.reveal pre code {
+  overflow: visible;
+  max-height: 100%;
+  color: #4c4f69;
+}
+
+.title {
+  background: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: invert(1) grayscale(1);
+  -webkit-filter: invert(1) grayscale(1);
+}
+
+.title-slide {
+  height: 100vh;
+}
+
+section > div {
+  height: 70vh;
+}
+
+.reveal code {
+  font-family: var(--codeFontFamily);
+  text-transform: none;
+  tab-size: 2;
+  background-color: transparent;
+  line-height: 120%;
+  font-size: 0.75vw;
+}
+
+ol > ul > li {
+  color: #d3d3d3;
+}
+/* This uses the single cube for bullet points */
+/* 
+ul > li {
+  list-style-image: url(../../assets/single-cube.svg);
+  background-position: left 4px;
+} */
+
+figure {
+  background-color: var(--secondary);
+}
+
+figcaption > p {
+  color: var(--primary) !important ;
+  font-family: var(--codeFontFamily);
+}
+
+.reveal pre code {
+  background: var(--secondary);
+  color: #000;
+}
+
+.highlight {
+  color: var(--quarternary);
+}
+
+x-col > ul {
+  font-size: 2.0vw;
+}
+
+.lowlight {
+  opacity: 0.8;
+}
+
+.title-div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 0px;
+  align-items: center;
+}
+
+.main-title {
+  grid-area: 1 / 1 / 3 / 2;
+}
+.subtitle {
+  grid-area: 1 /2 / 3/ 6;
+}

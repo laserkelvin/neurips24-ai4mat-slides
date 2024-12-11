@@ -1,0 +1,532 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>
+      Towards Foundation Models for Materials Science&mdash;Open MatSciML
+      Toolkit
+    </title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/neu_minimalist.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/catpuccin.css" />
+    <link rel="stylesheet" href="plugin/chalkboard/style.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-background-image="./assets/background.svg"
+          data-background-opacity="0.2"
+        >
+          <div class="title-slide">
+            <div style="max-width: 95%">
+              <figure>
+                <embed style="min-width: 40vw;" src="./assets/title.svg" alt="">
+              </figure>
+            </div>
+            <br />
+            <footer style="padding-top: 3vw">
+              <x-grid columns="3" ai="center">
+                <x-col span="1+2" class="transparent">
+                  <p>
+                    <span class="highlight">Kelvin Lee</span> 
+                    / Mikhail Galkin / <p>Santiago Miret</p>
+                  </p>
+                  <p>Intel Labs</p>
+                </x-col>
+              </x-grid>
+            </footer>
+            <aside class="notes"></aside>
+          </div>
+        </section>
+        <section>
+          <section>
+            <header>
+              <h2 class="section-header">Intro</h2>
+              <h3>Molecular symmetry</h3>
+            </header>
+            <div class="flex-container">
+              <div class="flex-item">
+                  <ul>
+                    <li>Atomistic systems display natural symmetry</li>
+                    <li>Objects in Euclidean space can undergo indistinguishable transformations</li>
+                    <li>Symmetry groups define basis of transformations</li>
+                    <li>Equivariance guarantees commutative properties of these transforms</li>
+                  </ul>
+              </div>
+              <div class="flex-item">
+                <div class="flex-container">
+                  <figure>
+                    <img src="./assets/so3-sphere.svg" alt="">
+                    <figcaption><p>$SO(3)$ rotation group</p></figcaption>
+                  </figure>
+                  <figure>
+                    <img src="./assets/g36-group.svg" alt="">
+                  <figcaption><p>$G_{36}^{\dagger}$ nuclear permutation group</p></figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <p>$SO(3)$ equivariance simplifies physics <strong>and</strong> compute</section>
+          <section>
+            <header>
+              <h2 class="section-header">Intro</h2>
+              <h3>Deconstructing equivariance</h3>
+            </header>
+            <div class="flex-container">
+              <div class="flex-item">
+                <ul>
+                  <li>Tensor product formalism for preserving $SO(3)$ equivariance in neural representations implemented in <code>e3nn</code></li>
+                  <li>Points in 3D space embedded in a basis of spherical harmonics&mdash;only equivariance preserving transformations are allowed</li>
+                  <li>Object &lrarr; latents correspondence is highly desirable</li>
+                </ul>
+              </div>
+              <div class="flex-item fragment">
+                <p>Same framework as angular momentum coupling: equivariance preserving transformations are angular momentum conserving!</p>
+                <p>
+                  $$\psi_{lm} = \sum_{m_1m_2} C(l_1l_2l; m_1 m_2 m) \psi_{l_1m_1} \psi_{l_2m_2}$$
+                </p>
+                <p>Clebsch-Gordon coefficients $C$ are non-zero only for specific combinations of angular momenta $l, l_1, l_2, m, m_1, m_2$</p>
+              </div>
+            </div>
+          </section>
+          <section>
+            <header>
+              <h2 class="section-header">Intro</h2>
+              <h3>Deconstructing equivariance</h3>
+            </header>
+            <div>
+              <p>$l=0,1,2$ have physical interpretations of scalar, vector, and tensor quantities</p>
+              <p>...but what do equivariant models <b>actually</b> learn?</p>
+              <p>How do higher angular momentum features affect modeling?</p>
+              <hr style="margin-top: 50px; margin-bottom: 50px">
+              <ol>
+                <li>Train a minimalist model on QM9 atomization energy prediction</li>
+                <li>Decompose features into respective irreducible representations</li>
+                <li>Project embedded structures in an interpretable way</li>
+              </ol>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <header>
+              <h2 class="section-header">Methods</h2>
+              <h3>Decoupling spherical harmonics</h3>
+            </header>
+            <div class="flex-container" style="margin-top: 50px">
+              <div class="flex-item">
+                <p>Symbolic reductions using <code>sympy</code></p>
+                <p>WYSIWYG open-source kernel implementations up to $l=10$ with TritonLang</p>
+                <p>Portable performance across multiple hardware architectures</p>
+              </div>
+              <div class="flex-item">
+                <figure>
+                  <img width=520px height=520px src="./assets/equitriton-qr-code.svg" alt="">
+                  <figcaption><p>github.com/IntelLabs/EquiTriton</p></figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <header>
+              <h2 class="section-header">Methods</h2>
+              <h3>A toy equivariant model</h3>
+            </header>
+            <div>
+              <figure>
+                <img height=500px src="./assets/architecture-drawing.svg" alt="">
+                <figcaption><p>Three interaction blocks yield node embeddings with $2l_\mathrm{max} + 1$ hidden features</p></figcaption>
+              </figure>
+            </div>
+          </section>
+          <section>
+            <header>
+              <h2 class="section-header">Methods</h2>
+              <h3>Low-dimensional projections</h3>
+            </header>
+            <div class="flex-container">
+              <div class="flex-item">
+                <ul>
+                  <li>Potential of heat-diffusion for Affinity-based transition embedding (PHATE) method for projecting high-dimensional latents for visualization</li>
+                  <li>Local relationships between data points captured through local Gaussian kernel</li>
+                  <li>Global relationships between data points modeled as diffusion probability</li>
+                </ul>
+              </div>
+              <div class="flex-item">
+                <figure>
+                  <img src="./assets/phate-description.png" alt="">
+                  <figcaption><small>Moon <i>et al.</i> (2019); Visualizing structure and transitions in high-dimensional biological data</small></figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-visibility="hidden">
+            <header>
+              <h2 class="section-header">Results</h2>
+              <h3>QM9 performance&mdash;high angular momentum</h3>
+            </header>
+            <div>
+              <table>
+                <tr>
+                  <th>Configuration</th>
+                  <th>Hidden dimension</th>
+                  <th># of parameters (M)</th>
+                  <th>Test error (eV) &darr;</th>
+                </tr>
+                <tr class="fragment" data-fragment-index=1>
+                  <td>$[0, 1, 2]$</td>
+                  <td>32</td>
+                  <td>1.6</td>
+                  <td><b>0.12</b></td>
+                </tr>
+                <tr class="fragment" data-fragment-index=2>
+                  <td>$[0, 1, 2, 4]$</td>
+                  <td>32</td>
+                  <td>3.0</td>
+                  <td>0.15</td>
+                </tr>
+                <tr class="fragment" data-fragment-index=2>
+                  <td>$[0, 1, 2, 6]$</td>
+                  <td>32</td>
+                  <td>2.6</td>
+                  <td>0.21</td>
+                </tr>
+                <tr class="fragment" data-fragment-index=2>
+                  <td>$[0, 1, 2, 8]$</td>
+                  <td>32</td>
+                  <td>2.6</td>
+                  <td>0.19</td>
+                </tr>
+                <tr class="fragment" data-fragment-index=2>
+                  <td>$[0, 1, 2, 10]$</td>
+                  <td>32</td>
+                  <td>2.6</td>
+                  <td>0.19</td>
+                </tr>
+              </table>
+              <p>Adding higher $l$ alone does not improve test performance</p>
+            </div>
+          </section>
+          <section data-visibility="hidden">
+            <header>
+              <h2 class="section-header">Results</h2>
+              <h3>QM9 performance&mdash;larger sets</h3>
+            </header>
+            <div>
+              <table>
+                <tr>
+                  <th>Configuration</th>
+                  <th>Hidden dimension</th>
+                  <th>Epochs</th>
+                  <th># of parameters (M)</th>
+                  <th>Test error (eV) &darr;</th>
+                </tr>
+                <tr class="fragment" data-fragment-index=1 id="testA">
+                  <td>$[0, 1, 2, 3, 4]$</td>
+                  <td>16</td>
+                  <td>30</td>
+                  <td>0.8</td>
+                  <td>1.24</td>
+                </tr>
+                <tr class="fragment" data-fragment-index=2 id="testB">
+                  <td>$[0, 1, 2, 3, 4, 5, 6]$</td>
+                  <td>16</td>
+                  <td>30</td>
+                  <td>1.9</td>
+                  <td>0.73</td>
+                </tr>
+                <tr class="fragment" data-fragment-index=2>
+                  <td>$[0, 1, 2, 3, 4, 5, 6, 7, 8]$</td>
+                  <td>16</td>
+                  <td>30</td>
+                  <td>3.7</td>
+                  <td>1.02</td>
+                </tr>
+                <tr class="fragment" data-fragment-index=3>
+                  <td>$[0, 3, 4, 5, 6]$</td>
+                  <td>16</td>
+                  <td>30</td>
+                  <td>0.8</td>
+                  <td>0.52</td>
+                </tr>
+                <tr class="fragment" data-fragment-index=4>
+                  <td>$[0, 1, 2, 3, 4]$</td>
+                  <td>16</td>
+                  <td>100</td>
+                  <td>0.8</td>
+                  <td>0.22</td>
+                </tr>
+                <tr class="fragment" data-fragment-index=4>
+                  <td>$[0, 3, 4, 5, 6]$</td>
+                  <td>16</td>
+                  <td>100</td>
+                  <td>0.8</td>
+                  <td><b>0.01</b></td>
+                </tr>
+              </table>
+              <p>Increasing $l$ alone does not improve test performance</p>
+            </div>
+          </section>
+          <section>
+            <header>
+              <h2 class="section-header">Results</h2>
+              <h3>PHATE analysis</h3>
+            </header>
+            <div>
+              <figure>
+                <img src="./assets/mini.png" alt="">
+                <figcaption>
+                    <p>Points colored by molecular complexity (spacial score)</p>
+                  <p>$l=1-3$ latents are largely unstructured and unused&mdash;<b>test error 0.73 eV</b></p>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+          <section>
+            <header>
+              <h2 class="section-header">Results</h2>
+              <h3>PHATE analysis</h3>
+            </header>
+            <div>
+              <figure>
+                <img src="./assets/unconventional.png" alt="">
+                <figcaption>
+                  <p>Ablating orders improves structure and test performance&mdash;<b>test error 0.52 eV</b></p>
+                  </figcaption>
+              </figure>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <header>
+              <h2 class="section-header">Conclusions</h2>
+              <h3>What does it mean?</h3>
+            </header>
+            <div class="flex-container" style="margin-top: 100px; margin-left: 150px">
+              <ul>
+                <li>Unused irreducible representations actually hinder quantitative performance</li>
+                <li>Are equivariant <b>features</b> actually being used?</li>
+                <li>$l=0$ dominates embeddings used for prediction&mdash;vector ($l=1$) and tensor ($l=2$) features should be able to do more</li>
+                <li>Embeddings need discoverable, interpretable structure to behave predictably in deployment&mdash;to the limit of linear models</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <header>
+              <h2 class="section-header">Conclusions</h2>
+              <h3>Why does it matter?</h3>
+            </header>
+            <div style="margin-left: 150px">
+            <div style="padding-top: 50px;">
+              <p>Neural networks are going to neural network&mdash;</p>
+              <p>we cannot take physical inductive biases for granted!</p>
+            </div>
+            <div style="padding-top: 50px">
+              <p>Qualitative embedding assessments may be required to get the best out of architectures</p>
+              <p>Need <b>regularization/pre-training tasks</b> that guarantee higher order terms to actually be used!</p>
+            </div>
+            </div>
+          </section>
+          <section>
+            <header>
+              <h2 class="section-header">Future work</h2>
+              <h3>What about &ldquo;real&rdquo; models and data?</h3>
+            </header>
+            <div class="flex-container">
+              <div class="flex-item">
+                  <ul>
+                    <li class="fragment">Analysis on 10,000 random Materials Project Trajectory samples</li>
+                    <li class="fragment">Pre-trained MACE &ldquo;medium&rdquo;</li>
+                    <li class="fragment">Black squares correspond to 1000 out-of-distribution data (🪧 #63) </li>
+                    <li class="fragment">PHATE projections of scalar embeddings (<code>node_feats</code>); 640-element embeddings</li>
+                  </ul>
+              </div>
+              <div class="flex-item">
+                  <figure>
+                    <img class="fragment" src="./assets/scalar_all.png" alt="">
+                  </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <header>
+              <h2 class="section-header">Future work</h2>
+              <h3>What about &ldquo;real&rdquo; models and data?</h3>
+            </header>
+            <div style="align-items: center;">
+              <figure>
+                <img src="./assets/mace_l_projections_noOOD.png" alt="">
+              </figure>
+              <p>Decomposed projections <b>without</b> OOD samples</p>
+              <p>$l=1,3$ are largely unstructured, odd embedding placement</p>
+            </div>
+          </section>
+          <section>
+            <header>
+              <h2 class="section-header">Future work</h2>
+              <h3>What about &ldquo;real&rdquo; models and data?</h3>
+            </header>
+            <div style="align-items: center;">
+              <figure>
+                <img src="./assets/mace_l_projections_OOD.png" alt="">
+              </figure>
+              <p>Decomposed projections <b>with</b> OOD samples</p>
+              <p>No <b>semantic</b> margin between in- and out-of-distribution smaples</p>
+            </div>
+          </section>
+          <section>
+            <header>
+              <h2 class="section-header">Future work</h2>
+              <h3>Call to action</h3>
+            </header>
+            <div>
+              <ul>
+                <li>Equivariant models like MACE may have untapped modeling performance</li>
+                <li>Need <b>qualitative</b>, as well as quantitative comparisons to guide data, model, and task design</li>
+                <li>Deeper insight into learning dynamics of tensor product models</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <header>
+              <h2 class="section-header">Acknowledgements</h2>
+            </header>
+            <div class="flex-container" style="padding-top: 150px">
+              <div class="flex-item" style="margin-right: 150px">
+                <ul>
+                  <li>John Pennycook<br><em>Kernel suggestions</em></li>
+                  <li>Xiaoxiao (Lory) Wang<br><em>OOD dopant data samples</em> (🪧 #63)</li>
+                  <li>Mikhail Galkin<br><em>Writing, code review, direction</em></li>
+                  <li>Santiago Miret<br><em>Writing, direction</em></li>
+                </ul>
+              </div>
+              <div class="flex-item">
+                <figure style="max-width: 100%; border-radius: 10px; background-color: rgba(162, 214, 249, 100); align-items: center; vertical-align: middle">
+                  <img
+                    src="./assets/intel-logo.svg"
+                    alt=""
+                  />
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+    <div class="hidden" style="display: none">
+      <div id="slide-footer">
+        <div class="footer">
+          <x-grid columns="3" ai="center">
+            <x-col class="transparent" style="margin-left: 55px; margin-right: 55px">
+              <small>NeurIPS'24 &middot; AI4Mat </small>
+            </x-col>
+            <x-col class="transparent" style="margin-left: 55px; margin-right: 55px">
+              <small>EquiTriton</small>
+            </x-col>
+            <x-col class="transparent" style="margin-left: 55px; margin-right: 55px">
+              <small>Lee, Galkin, & Miret</small>
+            </x-col>
+          </x-grid>
+        </div>
+      </div>
+    </div>
+
+    <script src="plugin/skelet/app.js"></script>
+    <script src="plugin/skelet/modules.js"></script>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/chalkboard/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+    <script src="plugin/d3/reveal-d3.js">
+    </script>
+    <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- <script type="text/javascript">
+        window.addEventListener("load", function () {
+
+            revealDiv = document.querySelector(".slides")
+            footer = document.getElementById("slide-footer");
+            revealDiv.appendChild(footer);
+
+        });
+    </script> -->
+    <script type="text/javascript">
+      var footer = $("#slide-footer").html();
+      if (window.location.search.match(/print-pdf/gi)) {
+        Reveal.addEventListener("ready", function (event) {
+          $(".slide-background").append(footer);
+        });
+      } else {
+        $("div.reveal").append(footer);
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({
+        startOnLoad: true,
+      });
+    </script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        transition: "fade",
+        transitionSpeed: "slow",
+        controlsLayout: "edges",
+        viewDistance: 1,
+        preloadIframes: true,
+        minScale: 1.0,
+        maxScale: 1.0,
+        width: 1920,
+        height: 1080,
+        pdfMaxPagesPerSlide: 1,
+        plugins: [
+          RevealChalkboard,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath,
+          RevealZoom,
+          Reveald3,
+        ],
+        chalkboard: {
+          chalkEffect: 0.1,
+          theme: "chalkboard",
+        },
+        disableLayout: true,
+        dependencies: [{ src: "plugin/mermaid/mermaid.js" }],
+      });
+    </script>
+  </body>
+</html>

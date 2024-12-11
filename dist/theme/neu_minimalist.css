@@ -1,0 +1,228 @@
+@import url("sky.css");
+@import url('https://fonts.googleapis.com/css?family=Jost&display=swap');
+
+:root {
+    --r-main-font: "Jost", "Helvetica", "Arial", "Open Sans", "sans-serif";
+    --r-main-font-size: 1.9vw;
+    --r-heading-text-transform: none;
+    --r-heading1-size: 6rem;
+    --r-link-color: #127CC1;
+    --r-background-color: #dbdcdb;
+}
+
+.reveal {
+    background-color: var(--r-background-color);
+}
+
+.reveal .progress {
+    opacity: 0.95;
+    z-index: 0;
+    height: 10px;
+}
+
+.reveal header {
+    padding: 2vw;
+    text-transform: capitalize;
+}
+
+li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.title-slide  h1 {
+    grid-area: talk-title;
+    text-transform: capitalize;
+    font-size: 9rem;
+}
+
+.title-slide h2 {
+    grid-area: talk-subtitle
+}
+
+.footer {
+  justify-content: normal !important
+}
+
+.title-slide footer {
+    /* justify-content: space-between; */
+    align-items: end;
+}
+
+.title-slide {
+    display: grid !important;
+    height: 100%;
+    width: 100;;
+    justify-self: stretch;
+    /* align-items: end; */
+    justify-content: space-between;
+    padding-right: 1.5vw;
+    padding-top: 3vw;
+    text-align: left;
+    grid-template:
+        [row1-start] "talk-title . . . " 20% [row1-end]
+        [row2-start] "talk-subtitle . . ." 20% [row2-end]
+        [row3-start] ". . . ." 35% [row3-end]
+        [row4-start] ". . . footer" 20% [row4-end]
+}
+
+header {
+    text-align: left;
+}
+
+header > h1, h2 {
+    text-transform: capitalize !important;
+}
+
+section > div {
+  padding-top: 50px;
+  margin-left: 30px;
+}
+
+.title-slide > header > h1 {
+    font-size: 9rem;
+}
+
+.title-slide > header > h2 {
+    font-size: 4rem;
+}
+
+.reveal .slide-number {
+    border-radius: 5px;
+    bottom: 35px;
+}
+
+.footer {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    font-size: 2.7rem;
+    justify-content: space-evenly;
+    display: inline-flex;
+  }
+
+.footer span {
+    font-size: 70%;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    padding-bottom: 0.2vw;
+    color: var(--r-background-color)
+}
+
+.footer > small {
+  margin-right: 50px;
+}
+
+.footer span:nth-of-type(1) {
+    text-align: left;
+}
+
+.footer span:nth-last-child(1) {
+    text-align: right;
+    content: none;
+}
+
+.reveal section {
+    max-width: 95%;
+    max-height: 90%;
+    margin: auto;
+}
+
+.content {
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+code {
+    border-radius: 10px;
+}
+
+/* 
+    Grid specifications and definitions
+*/
+
+header {
+    grid-area: header;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.column-content {
+    grid-area: text-content;
+}
+
+figure {
+    grid-area: fig
+}
+
+.column-layout {
+    display: grid !important; 
+    justify-self: stretch;
+    height: 100%;
+    grid-gap: 25px;
+    align-items: center;
+}
+
+.two-col-text-figure {
+    grid-template:
+        [row1-start] "header header header header "  25% [row1-end]
+        [row2-start] "text-content . fig fig" 60% [row2-end]
+        [row3-start] "footer footer footer footer" 15% [row3-end]
+}
+
+.one-col-figure-text {
+    grid-template:
+        [row1-start] "figure figure figure" 60% [row1-end]
+        [row2-start] ". caption . " 25% [row2-end]
+        [row3-start] "footer footer footer 15%" [row3-end]
+}
+
+.two-col-text {
+    grid-template:
+    [row1-start] "header header" 25% [row1-end]
+    [row2-start] "text-content text-content" 60% [row2-end]
+    [row3-start] "footer footer"
+}
+
+section > footer {
+    text-align: right;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+/* 
+    Table of contents slide customization
+*/
+
+#toc > ul {
+    display: inline-flex;
+    width: 70%;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+ul > li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.flex-container {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  max-width: 95%;
+  margin-left: 30px;
+}
+
+.flex-item {
+  max-width: 45%;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}

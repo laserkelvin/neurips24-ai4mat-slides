@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="111.78793mm"
+   height="88.51445mm"
+   viewBox="0 0 111.78793 88.51445"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="title.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.73544288"
+     inkscape:cx="169.28575"
+     inkscape:cy="296.42003"
+     inkscape:window-width="1290"
+     inkscape:window-height="971"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g51"
+     showgrid="false" />
+  <defs
+     id="defs1">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#Checkerboard"
+       preserveAspectRatio="xMidYMid"
+       id="pattern44"
+       patternTransform="matrix(1.9091883,1.9091883,-1.9091883,1.9091883,16.931314,-106.57512)"
+       x="0"
+       y="0" />
+    <pattern
+       inkscape:collect="always"
+       style="fill:#000000"
+       patternUnits="userSpaceOnUse"
+       width="2"
+       height="2"
+       patternTransform="translate(0,0) scale(10,10)"
+       id="Checkerboard"
+       inkscape:stockid="Checkerboard"
+       preserveAspectRatio="xMidYMid"
+       inkscape:isstock="true"
+       inkscape:label="Checkerboard">
+      <rect
+         style="stroke:none"
+         x="0"
+         y="0"
+         width="1"
+         height="1"
+         id="rect209" />
+      <rect
+         style="stroke:none"
+         x="1"
+         y="1"
+         width="1"
+         height="1"
+         id="rect211" />
+    </pattern>
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#Checkerboard"
+       preserveAspectRatio="xMidYMid"
+       id="pattern1"
+       patternTransform="matrix(1.9091883,1.9091883,-1.9091883,1.9091883,16.931314,-106.57512)"
+       x="0"
+       y="0" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-19.136829,-10.084928)">
+    <g
+       id="g50"
+       transform="matrix(0.52773458,0,0,0.52773458,-28.806463,36.383616)">
+      <g
+         id="g51"
+         transform="translate(-2.6458333,-15.875)">
+        <text
+           xml:space="preserve"
+           style="font-size:27.5167px;line-height:1.25;font-family:'Intel Clear';-inkscape-font-specification:'Intel Clear';text-align:center;text-anchor:middle;fill:url(#pattern44);fill-opacity:1;stroke-width:0.264583"
+           x="189.18254"
+           y="-14.366281"
+           id="text29"><tspan
+             sodipodi:role="line"
+             id="tspan29"
+             style="font-weight:bold;fill:url(#pattern44);fill-opacity:1;stroke-width:0.264583"
+             x="189.18254"
+             y="-14.366281">Deconstructing</tspan></text>
+        <g
+           id="g46"
+           transform="translate(3.7417722,-54.255714)">
+          <text
+             xml:space="preserve"
+             style="font-size:27.5167px;line-height:1.25;font-family:'Intel Clear';-inkscape-font-specification:'Intel Clear';text-align:center;text-anchor:middle;stroke-width:0.264583"
+             x="88.653252"
+             y="71.077644"
+             id="text44"><tspan
+               sodipodi:role="line"
+               id="tspan44"
+               style="font-weight:bold;line-height:1.25;text-align:start;text-anchor:start;stroke-width:0.264583"
+               x="88.653252"
+               y="71.077644">equ vari  nt </tspan><tspan
+               sodipodi:role="line"
+               style="font-weight:bold;line-height:1.25;text-align:start;text-anchor:start;stroke-width:0.264583"
+               x="88.653252"
+               y="105.47352"
+               id="tspan46">rep  es   n  ations</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-size:27.5167px;line-height:1.25;font-family:'Intel Clear';-inkscape-font-specification:'Intel Clear';text-align:center;text-anchor:middle;stroke-width:0.264583"
+             x="-140.08354"
+             y="-57.202896"
+             id="text46"
+             transform="scale(-1)"><tspan
+               sodipodi:role="line"
+               id="tspan45"
+               style="font-weight:bold;stroke-width:0.264583"
+               x="-140.08354"
+               y="-57.202896">i</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-size:27.5167px;line-height:1.25;font-family:'Intel Clear';-inkscape-font-specification:'Intel Clear';text-align:center;text-anchor:middle;stroke-width:0.264583"
+             x="216.24208"
+             y="112.76379"
+             id="text55"><tspan
+               sodipodi:role="line"
+               id="tspan55"
+               style="font-weight:bold;stroke-width:0.264583"
+               x="216.24208"
+               y="112.76379">t</tspan></text>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-size:27.5167px;line-height:1.25;font-family:'Intel Clear';-inkscape-font-specification:'Intel Clear';text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="-141.93172"
+           y="51.424007"
+           id="text53"
+           transform="scale(-1,1)"><tspan
+             sodipodi:role="line"
+             id="tspan53"
+             style="font-weight:bold;stroke-width:0.264583"
+             x="-141.93172"
+             y="51.424007">r</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:27.5167px;line-height:1.25;font-family:'Intel Clear';-inkscape-font-specification:'Intel Clear';text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="-85.431358"
+           y="113.36019"
+           id="text47"
+           transform="rotate(-90)"><tspan
+             sodipodi:role="line"
+             id="tspan47"
+             style="font-weight:bold;stroke-width:0.264583"
+             x="-85.431358"
+             y="113.36019">in</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:27.5167px;line-height:1.25;font-family:'Intel Clear';-inkscape-font-specification:'Intel Clear';text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="260.37323"
+           y="93.372635"
+           id="text49"><tspan
+             sodipodi:role="line"
+             style="font-weight:bold;text-align:end;text-anchor:end;stroke-width:0.264583"
+             x="260.37323"
+             y="93.372635"
+             id="tspan49">molecular</tspan><tspan
+             sodipodi:role="line"
+             style="font-weight:bold;text-align:end;text-anchor:end;stroke-width:0.264583"
+             x="260.37323"
+             y="127.76851"
+             id="tspan51">systems</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:27.5167px;line-height:1.25;font-family:'Intel Clear';-inkscape-font-specification:'Intel Clear';text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="100.52838"
+           y="170.52518"
+           id="text54"
+           transform="rotate(-45)"><tspan
+             sodipodi:role="line"
+             id="tspan54"
+             style="font-weight:bold;stroke-width:0.264583"
+             x="100.52838"
+             y="170.52518">e</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:27.5167px;line-height:1.25;font-family:'Intel Clear';-inkscape-font-specification:'Intel Clear';text-align:end;text-anchor:end;stroke-width:0.264583"
+           x="-195.18629"
+           y="16.968493"
+           id="text140"
+           transform="scale(-1,1)"><tspan
+             sodipodi:role="line"
+             id="tspan140"
+             style="font-weight:bold;font-size:27.5167px;stroke-width:0.264583"
+             x="-195.18629"
+             y="16.968493">a</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
