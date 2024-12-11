@@ -40,7 +40,10 @@ li:not(:last-child) {
 }
 
 .footer {
-  justify-content: normal !important
+  justify-content: normal !important;
+  display: inline-flex;
+  margin-bottom: 1.7vw;
+  margin-left: 1.7vw;
 }
 
 .title-slide footer {
