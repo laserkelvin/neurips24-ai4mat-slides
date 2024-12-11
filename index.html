@@ -140,8 +140,8 @@
               </div>
               <div class="flex-item">
                 <figure>
-                  <img width=520px height=520px src="./assets/equitriton-qr-code.svg" alt="">
-                  <figcaption><p>github.com/IntelLabs/EquiTriton</p></figcaption>
+                  <img style="min-height: 15vw; max-height: 20vw;" src="./assets/equitriton-qr-code.svg" alt="">
+                  <figcaption><a href="https://www.github.com/IntelLabs/EquiTriton">github.com/IntelLabs/EquiTriton</a></figcaption>
                 </figure>
               </div>
             </div>
@@ -153,7 +153,7 @@
             </header>
             <div>
               <figure>
-                <img height=500px src="./assets/architecture-drawing.svg" alt="">
+                <img style="max-height: 22vw;" src="./assets/architecture-drawing.svg" alt="">
                 <figcaption><p>Three interaction blocks yield node embeddings with $2l_\mathrm{max} + 1$ hidden features</p></figcaption>
               </figure>
             </div>
@@ -163,7 +163,7 @@
               <h2 class="section-header">Methods</h2>
               <h3>Low-dimensional projections</h3>
             </header>
-            <div class="flex-container">
+            <div class="flex-container" style="margin-top: 3vw;">
               <div class="flex-item">
                 <ul>
                   <li>Potential of heat-diffusion for Affinity-based transition embedding (PHATE) method for projecting high-dimensional latents for visualization</li>
@@ -173,7 +173,7 @@
               </div>
               <div class="flex-item">
                 <figure>
-                  <img src="./assets/phate-description.png" alt="">
+                  <img style="min-width: 45vw" src="./assets/phate-description.png" alt="">
                   <figcaption><small>Moon <i>et al.</i> (2019); Visualizing structure and transitions in high-dimensional biological data</small></figcaption>
                 </figure>
               </div>
@@ -295,7 +295,7 @@
             </header>
             <div>
               <figure>
-                <img src="./assets/mini.png" alt="">
+                <img style="max-height: 20vw;" src="./assets/mini.png" alt="">
                 <figcaption>
                     <p>Points colored by molecular complexity (spacial score)</p>
                   <p>$l=1-3$ latents are largely unstructured and unused&mdash;<b>test error 0.73 eV</b></p>
@@ -310,7 +310,7 @@
             </header>
             <div>
               <figure>
-                <img src="./assets/unconventional.png" alt="">
+                <img style="max-height: 20vw;" src="./assets/unconventional.png" alt="">
                 <figcaption>
                   <p>Ablating orders improves structure and test performance&mdash;<b>test error 0.52 eV</b></p>
                   </figcaption>
@@ -324,7 +324,7 @@
               <h2 class="section-header">Conclusions</h2>
               <h3>What does it mean?</h3>
             </header>
-            <div class="flex-container" style="margin-top: 100px; margin-left: 150px">
+            <div class="flex-container" style="margin-top: 5vw; margin-left: 10vw">
               <ul>
                 <li>Unused irreducible representations actually hinder quantitative performance</li>
                 <li>Are equivariant <b>features</b> actually being used?</li>
@@ -338,15 +338,15 @@
               <h2 class="section-header">Conclusions</h2>
               <h3>Why does it matter?</h3>
             </header>
-            <div style="margin-left: 150px">
-            <div style="padding-top: 50px;">
-              <p>Neural networks are going to neural network&mdash;</p>
-              <p>we cannot take physical inductive biases for granted!</p>
-            </div>
-            <div style="padding-top: 50px">
-              <p>Qualitative embedding assessments may be required to get the best out of architectures</p>
-              <p>Need <b>regularization/pre-training tasks</b> that guarantee higher order terms to actually be used!</p>
-            </div>
+            <div style="margin-left: 10vw">
+              <div style="padding-top: 3vw;">
+                <p>Neural networks are going to neural network&mdash;</p>
+                <p>we cannot take physical inductive biases for granted!</p>
+              </div>
+              <div style="padding-top: 3vw;">
+                <p>Qualitative embedding assessments may be required to get the best out of architectures</p>
+                <p>Need <b>regularization/pre-training tasks</b> that guarantee higher order terms to actually be used!</p>
+              </div>
             </div>
           </section>
           <section>
@@ -377,7 +377,7 @@
             </header>
             <div style="align-items: center;">
               <figure>
-                <img src="./assets/mace_l_projections_noOOD.png" alt="">
+                <img style="max-height: 20vw;" src="./assets/mace_l_projections_noOOD.png" alt="">
               </figure>
               <p>Decomposed projections <b>without</b> OOD samples</p>
               <p>$l=1,3$ are largely unstructured, odd embedding placement</p>
@@ -390,7 +390,7 @@
             </header>
             <div style="align-items: center;">
               <figure>
-                <img src="./assets/mace_l_projections_OOD.png" alt="">
+                <img style="max-height: 20vw;" src="./assets/mace_l_projections_OOD.png" alt="">
               </figure>
               <p>Decomposed projections <b>with</b> OOD samples</p>
               <p>No <b>semantic</b> margin between in- and out-of-distribution smaples</p>
@@ -415,7 +415,7 @@
             <header>
               <h2 class="section-header">Acknowledgements</h2>
             </header>
-            <div class="flex-container" style="padding-top: 150px">
+            <div class="flex-container" style="margin-top: 3vw;">
               <div class="flex-item" style="margin-right: 150px">
                 <ul>
                   <li>John Pennycook<br><em>Kernel suggestions</em></li>
@@ -457,8 +457,7 @@
     <script src="plugin/zoom/zoom.js"></script>
     <script src="plugin/chalkboard/plugin.js"></script>
     <script src="plugin/customcontrols/plugin.js"></script>
-    <script src="plugin/d3/reveal-d3.js">
-    </script>
+    <script src="plugin/d3/reveal-d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <!-- <script type="text/javascript">
